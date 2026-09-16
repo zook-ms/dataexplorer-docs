@@ -182,10 +182,9 @@ To embed a dashboard, you must establish a trust relationship between the host's
 
 To render Azure Maps visuals, the hosting application provides an Azure Maps shared access signature (SAS) token through `postMessage`. This is separate from Microsoft Entra authentication; keep your existing `getToken` handler.
 
-1. Add `f-enableAzureMapsSecureToken=true` to the iframe URL alongside `f-IFrameAuth=true`.
-2. Create an Azure Maps account and a backend endpoint that generates short-lived SAS tokens.
-3. Extend your message handler to accept `getMapsToken` messages with `signature: "queryExplorer"` and a string `requestId`. Before obtaining a token, verify that `event.origin` is `https://dataexplorer.azure.com` and `event.source` is your iframe's `contentWindow`.
-4. Return the SAS token in a `postMapsToken` message with the same request ID. In this example, `iframeWindow` is the iframe's `contentWindow`, and `mapsSasToken` is the token obtained from your backend:
+1. Create an Azure Maps account and a backend endpoint that generates short-lived SAS tokens.
+2. Extend your message handler to accept `getMapsToken` messages with `signature: "queryExplorer"` and a string `requestId`. Before obtaining a token, verify that `event.origin` is `https://dataexplorer.azure.com` and `event.source` is your iframe's `contentWindow`.
+3. Return the SAS token in a `postMapsToken` message with the same request ID. In this example, `iframeWindow` is the iframe's `contentWindow`, and `mapsSasToken` is the token obtained from your backend:
 
    ```javascript
    iframeWindow.postMessage({
