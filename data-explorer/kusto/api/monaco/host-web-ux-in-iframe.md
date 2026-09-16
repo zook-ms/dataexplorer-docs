@@ -203,7 +203,7 @@ Respond within 10 seconds. On failure, send `error: "mapsTokenUnavailable"` inst
 Use these resources to set up and test SAS authentication:
 
 - [Bring Data Into View Control - Azure Maps Web SDK Samples](https://samples.azuremaps.com/controls/bring-data-into-view-control) - A sample that uses SAS token authentication.
-- [Azure Function code](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/main/Services/SampleFunctions/GetAzureMapsSaSToken.cs) - An example Azure Function for generating SAS tokens.
+- [Azure Function code](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/main/Services/SampleFunctions/GetAzureMapsSaSToken.cs) - Token-generation logic only; replace its anonymous trigger and sample-site `Referer` check with the host application's authentication and origin checks before using it for an embedded web UI.
 
 ### Feature flags
 
